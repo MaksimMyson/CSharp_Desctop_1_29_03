@@ -3,10 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CSharp_Desctop_1_29_03"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Curriculum vitae" Height="600" Width="800">
     <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
 
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="FirstName" MaxWidth="200"
+                         VerticalAlignment="Top"
+                         materialDesign:HintAssist.Hint="Enter your name."
+                         AcceptsReturn="True"
+                         IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}"
+                         Style="{StaticResource MaterialDesignFilledTextBox}"
+                         TextWrapping="Wrap">
+                </TextBox>
+
+                <TextBox x:Name="LastName" MaxWidth="200"
+                         VerticalAlignment="Top"
+                         materialDesign:HintAssist.Hint="Enter your last name."
+                         AcceptsReturn="True"
+                         IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}"
+                         Style="{StaticResource MaterialDesignFilledTextBox}"
+                         TextWrapping="Wrap"
+                         Margin="10,0,0,0">
+                </TextBox>
+            </StackPanel>
+
+            <TextBox x:Name="PhoneTextBox" MaxWidth="200"
+                     VerticalAlignment="Top"
+                     materialDesign:HintAssist.Hint="Enter your phone number."
+                     AcceptsReturn="True"
+                     HorizontalAlignment="Left"
+                     materialDesign:TransitionAssist.DisableTransitions="True"
+                     MaxLength="13"
+                     Margin="12,5,0,0"/>
+
+            <TextBox x:Name="EmailTextBox" MaxWidth="200"
+                     MaxLength="30"
+                     VerticalAlignment="Top"
+                     materialDesign:HintAssist.Hint="Enter your email."
+                     AcceptsReturn="True"
+                     HorizontalAlignment="Left"
+                     materialDesign:TransitionAssist.DisableTransitions="True"
+                     Margin="180,5,0,0">
+            </TextBox>
+
+            <DatePicker x:Name="DatePicker"
+                 Width="120"
+                 Margin="10,5,0,0"
+                 materialDesign:HintAssist.Hint="Enter your date of birth"
+                 materialDesign:TextFieldAssist.HasClearButton="True"
+                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}"/>
+
+            <TextBox x:Name="ShortInfoTextBox" MaxWidth="400"
+                     VerticalAlignment="Top"
+                     materialDesign:HintAssist.Hint="Enter short info about yourself."
+                     AcceptsReturn="True"
+                     HorizontalAlignment="Left"
+                     materialDesign:TransitionAssist.DisableTransitions="True"
+                     Margin="10,5,0,0" TextWrapping="Wrap" Height="50"/>
+
+            <TextBox x:Name="ExperienceTextBox" MaxWidth="400"
+                     VerticalAlignment="Top"
+                     materialDesign:HintAssist.Hint="Enter your work experience."
+                     AcceptsReturn="True"
+                     HorizontalAlignment="Left"
+                     materialDesign:TransitionAssist.DisableTransitions="True"
+                     Margin="10,5,0,0" TextWrapping="Wrap" Height="100"/>
+
+            <Button Content="Save CV" Click="SaveCVButton_Click" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+
+        </StackPanel>
     </Grid>
 </Window>
